@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="https://fav.farm/🔥" />
+  <script src="index.js" defer></script>
 </head>
 <body>
 
@@ -48,20 +49,20 @@
     </div>
   </div>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
+  <div class="buttons-container">
+    <button class="button-sequence">Play Sequence</button>
+    <button class="button-clear">Clear Sequence</button>
+  </div>
 
-<script>
-
-</script>
-
+  <audio data-key="65" src="sonidos/clap.wav"></audio>
+  <audio data-key="83" src="sonidos/hihat.wav"></audio>
+  <audio data-key="68" src="sonidos/kick.wav"></audio>
+  <audio data-key="70" src="sonidos/openhat.wav"></audio>
+  <audio data-key="71" src="sonidos/boom.wav"></audio>
+  <audio data-key="72" src="sonidos/ride.wav"></audio>
+  <audio data-key="74" src="sonidos/snare.wav"></audio>
+  <audio data-key="75" src="sonidos/tom.wav"></audio>
+  <audio data-key="76" src="sonidos/tink.wav"></audio>
 
 </body>
 </html>
