@@ -69,3 +69,21 @@ body{
     justify-items: center;
     align-items: center;
 }
+
+.lista-alumnos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.lista-alumnos li span:first-child {
+    justify-self: start;
+}
+
+.lista-alumnos li span:last-child {
+    justify-self: end;
+    font-weight: bold;
+    color: var(--text-normal);
+}

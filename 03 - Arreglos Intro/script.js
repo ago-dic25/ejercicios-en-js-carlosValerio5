@@ -73,7 +73,13 @@ button.addEventListener("click", function() {
     listaAlumnos.innerHTML = "";
     showAlumnos.map(({nombre, apellidoPaterno, apellidoMaterno, matricula}) => {
         const li = document.createElement("li");
-        li.textContent = nombre + " " + apellidoPaterno + " " + apellidoMaterno + " - " + matricula;
+        const name = document.createElement("span");
+        const matriculaSpan = document.createElement("span");
+
+        name.textContent = nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+        matriculaSpan.textContent = matricula;
+        li.appendChild(name);
+        li.appendChild(matriculaSpan);
         listaAlumnos.appendChild(li);
     });
 });
@@ -84,11 +90,4 @@ input.addEventListener("keyup", function(event) {
     }
 });
 
-if (input.value === "") {
-    listaAlumnos.innerHTML = "";
-    alumnosApellido.map(({nombre, apellidoPaterno, apellidoMaterno, matricula}) => {
-        const li = document.createElement("li");
-        li.textContent = nombre + " " + apellidoPaterno + " " + apellidoMaterno + " - " + matricula;
-        listaAlumnos.appendChild(li);
-    });
-}
+button.click();
