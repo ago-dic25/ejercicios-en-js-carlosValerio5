@@ -1,0 +1,71 @@
+:root {
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 5%);
+    --bg-light: hsl(0, 0%, 10%);
+    --text-normal: hsl(0, 0%, 90%);
+    --text-muted : hsl(0, 0%, 70%);
+    --border: hsl(0, 0%, 30%);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --highlight: hsl(0, 0%, 60%);
+    --shadow: 0 0 10px var(--highlight);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: var(--bg-dark);
+    color: var(--text-normal);
+    height: 100vh;
+    width: 100vw;
+    gap: 1.5rem;
+}
+
+.filtro-alumno {
+    background: var(--bg-light);
+    color: var(--text-normal);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--gradient);
+    border: var(--border);
+    border-radius: 1rem;
+    border-top: 1px solid var(--highlight);
+    justify-content: space-evenly;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.container:hover {
+    background: var(--gradient-hover);
+}
+
+.query-button {
+    background: var(--bg);
+    color: var(--text-muted);
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.resultado {
+    padding: 1rem;
+}
+
+.lista-alumnos{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-items: center;
+    align-items: center;
+}
