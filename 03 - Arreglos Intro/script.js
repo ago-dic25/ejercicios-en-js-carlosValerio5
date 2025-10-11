@@ -11,31 +11,38 @@ var alumnos = [
 
 const alumnosApellido = [{
     nombre: "Carlos",
-    apellido: "Valerio"
+    apellido: "Valerio",
+    matricula: "123456"
 },
 {
     nombre: "Cesar",
-    apellido: "Gonzalez"
+    apellido: "Gonzalez",
+    matricula: "123457"
 },
 {
     nombre: "Regina",
-    apellido: "Lopez"
+    apellido: "Lopez",
+    matricula: "123458"
 },
 {
     nombre: "Diego",
-    apellido: "Fernandez"
+    apellido: "Fernandez",
+    matricula: "123459"
 },
 {
     nombre: "Andrea",
-    apellido: "Martinez"
+    apellido: "Martinez",
+    matricula: "123460"
 },
 {
     nombre: "Valeria",
-    apellido: "Hernandez"
+    apellido: "Hernandez",
+    matricula: "123461"
 },
 {
     nombre: "Mayela",
-    apellido: "Jimenez"
+    apellido: "Jimenez",
+    matricula: "123462"
 }
 ]
 
@@ -49,17 +56,17 @@ button.addEventListener("click", function() {
     if (input.value === "")
         showAlumnos = alumnosApellido;
     else
-        showAlumnos = alumnosApellido.filter(({nombre, apellido})=> {
+        showAlumnos = alumnosApellido.filter(({nombre, apellido, matricula})=> {
             const completeName = (nombre + ' ' + apellido).toLocaleLowerCase();
 
-            return nombre.toLowerCase().includes(input.value.toLowerCase()) || apellido.toLowerCase().includes(input.value.toLowerCase()) || completeName.includes(input.value.toLocaleLowerCase());
+            return nombre.toLowerCase().includes(input.value.toLowerCase()) || apellido.toLowerCase().includes(input.value.toLowerCase()) || completeName.includes(input.value.toLocaleLowerCase()) || matricula.includes(input.value);
         });
 
 
     listaAlumnos.innerHTML = "";
-    showAlumnos.map(({nombre, apellido}) => {
+    showAlumnos.map(({nombre, apellido, matricula}) => {
         const li = document.createElement("li");
-        li.textContent = nombre + " " + apellido;
+        li.textContent = nombre + " " + apellido + " - " + matricula;
         listaAlumnos.appendChild(li);
     });
 });
@@ -72,9 +79,9 @@ input.addEventListener("keyup", function(event) {
 
 if (input.value === "") {
     listaAlumnos.innerHTML = "";
-    alumnosApellido.map(({nombre, apellido}) => {
+    alumnosApellido.map(({nombre, apellido, matricula}) => {
         const li = document.createElement("li");
-        li.textContent = nombre + " " + apellido;
+        li.textContent = nombre + " " + apellido + " - " + matricula;
         listaAlumnos.appendChild(li);
     });
 }
