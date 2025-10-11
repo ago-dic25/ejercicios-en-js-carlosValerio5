@@ -11,37 +11,44 @@ var alumnos = [
 
 const alumnosApellido = [{
     nombre: "Carlos",
-    apellido: "Valerio",
+    apellidoPaterno: "Valerio",
+    apellidoMaterno: "Rios",
     matricula: "123456"
 },
 {
     nombre: "Cesar",
-    apellido: "Gonzalez",
+    apellidoPaterno: "Gonzalez",
+    apellidoMaterno: "Lopez",
     matricula: "123457"
 },
 {
     nombre: "Regina",
-    apellido: "Lopez",
+    apellidoPaterno: "Lopez",
+    apellidoMaterno: "Martinez",
     matricula: "123458"
 },
 {
     nombre: "Diego",
-    apellido: "Fernandez",
+    apellidoPaterno: "Fernandez",
+    apellidoMaterno: "Gonzalez",
     matricula: "123459"
 },
 {
     nombre: "Andrea",
-    apellido: "Martinez",
+    apellidoPaterno: "Martinez",
+    apellidoMaterno: "Hernandez",
     matricula: "123460"
 },
 {
     nombre: "Valeria",
-    apellido: "Hernandez",
+    apellidoPaterno: "Hernandez",
+    apellidoMaterno: "Lopez",
     matricula: "123461"
 },
 {
     nombre: "Mayela",
-    apellido: "Jimenez",
+    apellidoPaterno: "Jimenez",
+    apellidoMaterno: "Ramirez",
     matricula: "123462"
 }
 ]
@@ -56,17 +63,17 @@ button.addEventListener("click", function() {
     if (input.value === "")
         showAlumnos = alumnosApellido;
     else
-        showAlumnos = alumnosApellido.filter(({nombre, apellido, matricula})=> {
-            const completeName = (nombre + ' ' + apellido).toLocaleLowerCase();
+        showAlumnos = alumnosApellido.filter(({nombre, apellidoPaterno, apellidoMaterno, matricula})=> {
+            const completeName = (nombre + ' ' + apellidoPaterno + ' ' + apellidoMaterno).toLocaleLowerCase();
 
-            return nombre.toLowerCase().includes(input.value.toLowerCase()) || apellido.toLowerCase().includes(input.value.toLowerCase()) || completeName.includes(input.value.toLocaleLowerCase()) || matricula.includes(input.value);
+            return nombre.toLowerCase().includes(input.value.toLowerCase()) || apellidoPaterno.toLowerCase().includes(input.value.toLowerCase()) || apellidoMaterno.includes(input.value.toLocaleLowerCase()) || completeName.includes(input.value.toLocaleLowerCase()) || matricula.includes(input.value);
         });
 
 
     listaAlumnos.innerHTML = "";
-    showAlumnos.map(({nombre, apellido, matricula}) => {
+    showAlumnos.map(({nombre, apellidoPaterno, apellidoMaterno, matricula}) => {
         const li = document.createElement("li");
-        li.textContent = nombre + " " + apellido + " - " + matricula;
+        li.textContent = nombre + " " + apellidoPaterno + " " + apellidoMaterno + " - " + matricula;
         listaAlumnos.appendChild(li);
     });
 });
@@ -79,9 +86,9 @@ input.addEventListener("keyup", function(event) {
 
 if (input.value === "") {
     listaAlumnos.innerHTML = "";
-    alumnosApellido.map(({nombre, apellido, matricula}) => {
+    alumnosApellido.map(({nombre, apellidoPaterno, apellidoMaterno, matricula}) => {
         const li = document.createElement("li");
-        li.textContent = nombre + " " + apellido + " - " + matricula;
+        li.textContent = nombre + " " + apellidoPaterno + " " + apellidoMaterno + " - " + matricula;
         listaAlumnos.appendChild(li);
     });
 }
